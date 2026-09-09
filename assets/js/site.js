@@ -1,5 +1,20 @@
-// Data for Days 4 to 10 of Amit's Annapurna Circuit Trek
+// Data for Days of Amit's Annapurna Circuit Trek
 const daysData = {
+  2: {
+    day: 2,
+    date: '09/09',
+    loc: 'Syange ➔ Tal',
+    altitude: '1,290 ➔ 1,700 מ\'',
+    title: 'יום 2: היום הראשון לטרק - מ-Syange ל-Tal',
+    image: 'assets/images/day-04-chame.png',
+    desc: 'היום הראשון הרשמי של ההליכה בטרק! יוצאים מ-Syange ומטפסים לצד ערוץ נהר המרשיאנגדי השוצף, עוברים גשרים תלויים מרשימים ומפלים שופעים עד להגעה לכפר המרהיב Tal, השוכן בפתח עמק שטוח מוקף צוקים.',
+    highlights: [
+      '🥾 היום הראשון של ההליכה בטרק סובב אנאפורנה!',
+      'מרחק: ~9-11 ק"מ | זמן הליכה: 4-5 שעות.',
+      'גובה: מ-1,290 מטרים ב-Syange ועד 1,700 מטרים ב-Tal.',
+      'עלייה מצטברת: +500 עד 650 מטרים | ירידה מצטברת: 100- עד 200- מטרים.'
+    ]
+  },
   4: {
     day: 4,
     date: '12/09',
@@ -131,20 +146,25 @@ function openDay(dayNum) {
     const btnPrev = document.getElementById('btn-prev-day');
     const btnNext = document.getElementById('btn-next-day');
 
-    if (dayNum <= 4) {
+    const availableDays = Object.keys(daysData).map(Number).sort((a,b) => a-b);
+    const currIndex = availableDays.indexOf(dayNum);
+
+    if (currIndex <= 0) {
       btnPrev.disabled = true;
       btnPrev.innerText = '⬅️ אין יום קודם';
     } else {
+      const prevNum = availableDays[currIndex - 1];
       btnPrev.disabled = false;
-      btnPrev.innerText = `⬅️ יום ${dayNum - 1}`;
+      btnPrev.innerText = `⬅️ יום ${prevNum}`;
     }
 
-    if (dayNum >= 10) {
+    if (currIndex >= availableDays.length - 1) {
       btnNext.disabled = true;
       btnNext.innerText = 'אין יום הבא ➡️';
     } else {
+      const nextNum = availableDays[currIndex + 1];
       btnNext.disabled = false;
-      btnNext.innerText = `יום ${dayNum + 1} ➡️`;
+      btnNext.innerText = `יום ${nextNum} ➡️`;
     }
 
     // Toggle views
@@ -185,14 +205,18 @@ function showListView() {
 }
 
 function prevDay() {
-  if (currentDay > 4) {
-    openDay(currentDay - 1);
+  const availableDays = Object.keys(daysData).map(Number).sort((a,b) => a-b);
+  const currIndex = availableDays.indexOf(currentDay);
+  if (currIndex > 0) {
+    openDay(availableDays[currIndex - 1]);
   }
 }
 
 function nextDay() {
-  if (currentDay < 10) {
-    openDay(currentDay + 1);
+  const availableDays = Object.keys(daysData).map(Number).sort((a,b) => a-b);
+  const currIndex = availableDays.indexOf(currentDay);
+  if (currIndex < availableDays.length - 1) {
+    openDay(availableDays[currIndex + 1]);
   }
 }
 
@@ -201,7 +225,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash;
   if (hash && hash.startsWith('#day-')) {
     const dayNum = parseInt(hash.replace('#day-', ''), 10);
-    if (dayNum >= 4 && dayNum <= 10) {
+    if (daysData[dayNum]) {
       openDay(dayNum);
     }
   }
