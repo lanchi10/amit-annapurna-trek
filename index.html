@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>סובב אנאפורנה - המסלול של עמית | ימים 4-10</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand">
+        <span class="mountain-icon">🏔️</span>
+        <div class="brand-text">
+          <h1>מסלול סובב אנאפורנה</h1>
+          <p class="subtitle">המסלול של עמית • ימים 4 עד 10 • יומן מסע</p>
+        </div>
+      </div>
+      <div class="badge-rtl">Mobile First • עברית</div>
+    </div>
+  </header>
+
+  <!-- Banner / Intro -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-card">
+        <h2>המסע של עמית ברכס האנאפורנה 🇳🇵</h2>
+        <p>תמונות, גבהים, תאריכים ופרטי הלינה לימים 4-10 במסלול סובב אנאפורנה. לחצי על כל יום כדי לפתוח את העמוד המלא!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Grid Container (List View) -->
+  <main class="main-content container" id="list-view">
+    <div class="section-title">
+      <h3>📅 סדר הימים במסלול (ימים 4–10)</h3>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Day 4 Card -->
+      <article class="day-card" data-day="4">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-04-chame.png" alt="יום 4 - Chame" loading="lazy">
+          <span class="day-badge">יום 4</span>
+          <span class="alt-badge">2,710 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 12/09</span>
+            <span class="card-loc">📍 Chame</span>
+          </div>
+          <h4 class="card-title">לינה ב-Chame</h4>
+          <p class="card-desc">הגעה ל-Chame, נופי נהר המרשיאנגדי, גלגלי תפילה בדרך ומנוחה בכפר.</p>
+          <button class="btn-open-day" onclick="openDay(4)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 5 Card -->
+      <article class="day-card" data-day="5">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-05-upper-pisang.png" alt="יום 5 - Upper Pisang" loading="lazy">
+          <span class="day-badge">יום 5</span>
+          <span class="alt-badge">3,230 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 13/09</span>
+            <span class="card-loc">📍 Upper Pisang</span>
+          </div>
+          <h4 class="card-title">לינה ב-Upper Pisang</h4>
+          <p class="card-desc">עלייה לפיסאנג העליונה, נוף עוצר נשימה לעמק, מנזר טיבטי עתיק וגומפה.</p>
+          <button class="btn-open-day" onclick="openDay(5)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 6 Card -->
+      <article class="day-card" data-day="6">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-06-manang.png" alt="יום 6 - Manang" loading="lazy">
+          <span class="day-badge">יום 6</span>
+          <span class="alt-badge">3,540 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 14/09</span>
+            <span class="card-loc">📍 Manang</span>
+          </div>
+          <h4 class="card-title">לינה ב-Manang</h4>
+          <p class="card-desc">הגעה לכפר מנאנג, נופי אגמי העמק והרי גנגפורנה המושלגים.</p>
+          <button class="btn-open-day" onclick="openDay(6)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 7 Card (Approved Image) -->
+      <article class="day-card card-approved" data-day="7">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-07-manang-rest.png" alt="יום 7 - מנוחה ואקלים במנאנג" loading="lazy">
+          <span class="day-badge badge-gold">יום 7★</span>
+          <span class="alt-badge">3,540 מ'</span>
+          <span class="approved-tag">✨ התמונה המאושרת</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 15/09</span>
+            <span class="card-loc">📍 Manang</span>
+          </div>
+          <h4 class="card-title">יום מנוחה ואקלים במנאנג</h4>
+          <p class="card-desc">יום מנוחה מתוכנן, התאקלמות לגובה, הליכה קלה לפי הרגשה ואגם גנגפורנה הטורקיז.</p>
+          <button class="btn-open-day btn-gold" onclick="openDay(7)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 8 Card -->
+      <article class="day-card" data-day="8">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-08-yak-kharka.png" alt="יום 8 - Yak Kharka" loading="lazy">
+          <span class="day-badge">יום 8</span>
+          <span class="alt-badge">4,018 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 16/09</span>
+            <span class="card-loc">📍 Yak Kharka</span>
+          </div>
+          <h4 class="card-title">לינה ב-Yak Kharka</h4>
+          <p class="card-desc">חציית קו 4,000 המטרים, שטחי מרעה של יאקים, אוויר דליל ונוף פתוח להרים.</p>
+          <button class="btn-open-day" onclick="openDay(8)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 9 Card -->
+      <article class="day-card" data-day="9">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-09-thorong-phedi.png" alt="יום 9 - Thorong Phedi" loading="lazy">
+          <span class="day-badge">יום 9</span>
+          <span class="alt-badge">4,450 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 17/09</span>
+            <span class="card-loc">📍 Thorong Phedi</span>
+          </div>
+          <h4 class="card-title">לינה ב-Thorong Phedi</h4>
+          <p class="card-desc">מחנה הבסיס לפני מעבר טורונג לה, התארגנות ומנוחה לקראת הטיפוס לפסגה.</p>
+          <button class="btn-open-day" onclick="openDay(9)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+      <!-- Day 10 Card -->
+      <article class="day-card" data-day="10">
+        <div class="card-image-wrap">
+          <img src="assets/images/day-10-muktinath.png" alt="יום 10 - Muktinath" loading="lazy">
+          <span class="day-badge">יום 10</span>
+          <span class="alt-badge">מעבר 5,416 מ' | לינה 3,800 מ'</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-date">🗓️ 18/09</span>
+            <span class="card-loc">📍 Thorong La ➔ Muktinath</span>
+          </div>
+          <h4 class="card-title">חציית מעבר טורונג לה ולינה ב-Muktinath</h4>
+          <p class="card-desc">יום השיא של המסלול! העפלה לפסגת מעבר Thorong La בגובה 5,416 מ' וירידה למוקטינאת'.</p>
+          <button class="btn-open-day" onclick="openDay(10)">פתחי את היום ➔</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Detail View Container (Internal Day Page) -->
+  <section class="detail-view container hidden" id="detail-view" tabindex="-1">
+    <div class="detail-card">
+      <div class="detail-header-bar">
+        <button class="btn-back-top" onclick="showListView()">⬅️ חזרה לכל הימים</button>
+        <span class="detail-day-tag" id="detail-day-tag">יום 4</span>
+      </div>
+
+      <div class="detail-main-image-wrap">
+        <img id="detail-image" src="" alt="תמונת היום המוגדלת">
+        <div class="detail-overlay-info">
+          <span class="detail-alt-badge" id="detail-alt-badge">גובה: 2,710 מ'</span>
+        </div>
+      </div>
+
+      <div class="detail-content-body">
+        <div class="detail-meta-row">
+          <span id="detail-date" class="meta-item">🗓️ תאריך: 12/09</span>
+          <span id="detail-loc" class="meta-item">📍 מקום לינה: Chame</span>
+        </div>
+
+        <h2 id="detail-title">לינה ב-Chame</h2>
+        <p id="detail-desc" class="detail-text-content"></p>
+
+        <div class="detail-highlights" id="detail-highlights-box">
+          <h4>💡 דגשים ומידע ליום זה:</h4>
+          <ul id="detail-highlights-list"></ul>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation for Day Page -->
+      <nav class="bottom-nav">
+        <button id="btn-prev-day" class="nav-btn prev-btn" onclick="prevDay()">⬅️ היום הקודם</button>
+        <button class="nav-btn home-btn" onclick="showListView()">🏠 חזרה לכל הימים</button>
+        <button id="btn-next-day" class="nav-btn next-btn" onclick="nextDay()">היום הבא ➡️</button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>נבנה עבור עמית • מסלול סובב אנאפורנה 🏔️ | ימים 4-10</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
