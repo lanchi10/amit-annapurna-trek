@@ -674,6 +674,59 @@
         </div>
       </article>
 
+      <!-- DAY 9 CARD -->
+      <article id="day-card-9" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group relative z-10">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna9.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 9 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            
+            <!-- DYNAMIC TOP LEFT BADGE FOR ACTIVE DAY -->
+            <div id="card-active-badge-9" class="absolute top-3 left-3 px-3.5 py-1.5 rounded-full bg-cyan-400 text-slate-950 text-xs font-black shadow-lg shadow-cyan-400/50 flex items-center gap-2 border border-white/40 z-30" style="display:none;"></div>
+
+            <!-- TOP RIGHT DAY BADGE -->
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-sky-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
+              יום 9 לטרק (17/09)
+            </div>
+
+            <!-- DATE BADGE -->
+            <div id="card-date-badge-9" class="absolute bottom-3 right-3 text-xs font-bold text-slate-300 bg-slate-950/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-slate-700/80">
+              🗓️ 17 בספטמבר 2026
+            </div>
+          </div>
+
+          <div class="p-5">
+            <!-- DYNAMIC CALLOUT FOR ACTIVE DAY -->
+            <div id="card-callout-9" class="bg-gradient-to-r from-cyan-500/30 via-teal-500/30 to-cyan-500/30 border-2 border-cyan-400 rounded-xl p-3 mb-3 text-center text-xs font-black text-cyan-200 shadow-xl flex items-center justify-center gap-2" style="display:none;"></div>
+
+            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+              <span>📍 Yak Kharka ➔ Thorong Phedi</span>
+              <span>4,450 מטר</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-300 transition mb-2">
+              הגעה למחנה הבסיס Thorong Phedi במעבר הדרדרת (18 צילומים)
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              מעבר בכפר Ledar, חציית גשר נהר ג׳ארסאנג, מעבר זהיר במקטע הדרדרת (Scree Area) והגעה למחנה הבסיס Thorong Phedi (4,450מ').
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+              <span>🚶 8 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 6.5 שעות</span>
+              <span>•</span>
+              <span>📸 18 צילומים</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a id="card-cta-btn-9" href="https://anaforna9.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-600/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 9 (Netlify)</span>
+            <span>➔</span>
+          </a>
+        </div>
+      </article>
+
     </div>
 
     <!-- UPCOMING DAYS SECTION -->
@@ -694,13 +747,7 @@
         <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 בקרוב</span>
       </div>
 
-      <!-- Day 9 Upcoming Peak -->
-      <div class="bg-slate-900/60 p-4 rounded-2xl border border-amber-500/20 opacity-80">
-        <div class="flex items-center justify-between text-xs text-amber-400 font-bold mb-2">
-          <span>יום 9 לטרק</span>
-          <span>18/09</span>
-        </div>
-        <h4 class="font-bold text-sm text-white mb-1">Thorong La Pass (5,416m) 🏔️</h4>
+      <h4 class="font-bold text-sm text-white mb-1">Thorong La Pass (5,416m) 🏔️</h4>
         <p class="text-[11px] text-slate-400 font-light mb-3">חציית מעבר ההרים הגבוה בעולם וירידה ל-Muktinath</p>
         <span class="inline-block text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">🏆 שיא הטרק</span>
       </div>
@@ -799,7 +846,7 @@ ${window.location.href}`;
         }
       }
 
-      for (let d = 1; d <= 8; d++) {
+      for (let d = 1; d <= 9; d++) {
         const card = document.getElementById(`day-card-${d}`);
         const activeBadge = document.getElementById(`card-active-badge-${d}`);
         const dateBadge = document.getElementById(`card-date-badge-${d}`);
