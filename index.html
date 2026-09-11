@@ -589,25 +589,89 @@
       }
     }
 
-    // Dynamic Nepal Real-Time Clock & Auto-Highlighter
-    function updateNepalRealtimeClock() {
+    // Dynamic Nepal Real-Time Trek Tracker (UTC+5:45)
+    const TREK_SCHEDULE = {
+      "2026-09-10": { day: 1, name: "Tal", altitude: "1,700 מ'", dist: "~13 ק\"מ", netlify: "https://anaforna1.netlify.app/" },
+      "2026-09-11": { day: 2, name: "Danaque", altitude: "2,190 מ'", dist: "~25 ק\"מ", netlify: "https://anaforna2.netlify.app/" },
+      "2026-09-12": { day: 3, name: "Chame", altitude: "2,710 מ'", dist: "~40 ק\"מ", netlify: "https://anaforna3.netlify.app/" },
+      "2026-09-13": { day: 4, name: "Upper Pisang", altitude: "3,230 מ'", dist: "~56 ק\"מ", netlify: "https://anaforna4.netlify.app/" },
+      "2026-09-14": { day: 5, name: "Manang", altitude: "3,540 מ'", dist: "~73 ק\"מ", netlify: "https://anaforna5.netlify.app/" },
+      "2026-09-15": { day: 6, name: "Manang (מנוחה)", altitude: "3,540 מ'", dist: "~73 ק\"מ", netlify: "https://anaforna6.netlify.app/" },
+      "2026-09-16": { day: 7, name: "Yak Kharka", altitude: "4,018 מ'", dist: "~84 ק\"מ", netlify: "https://anaforna7.netlify.app/" },
+      "2026-09-17": { day: 8, name: "High Camp", altitude: "4,450 מ'", dist: "~92 ק\"מ", netlify: "https://anaforna8.netlify.app/" },
+      "2026-09-18": { day: 9, name: "Thorong La Pass", altitude: "5,416 מ'", dist: "~105 ק\"מ", netlify: "https://anaforna9.netlify.app/" },
+    };
+
+    function updateNepalTracker() {
       const now = new Date();
-      // UTC time + 5h 45m
+      // UTC time + 5 hours 45 minutes
       const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
-      const nepalOffsetMs = (5 * 60 + 45) * 60000;
-      const nepalDate = new Date(utcMs + nepalOffsetMs);
+      const nepalMs = utcMs + (5 * 3600 + 45 * 60) * 1000;
+      const nepalDate = new Date(nepalMs);
+
+      const yyyy = nepalDate.getFullYear();
+      const mm = String(nepalDate.getMonth() + 1).padStart(2, '0');
+      const dd = String(nepalDate.getDate()).padStart(2, '0');
+      const dateKey = `${yyyy}-${mm}-${dd}`;
+      const formattedDate = `${dd}/${mm}/${yyyy}`;
 
       const hrs = String(nepalDate.getHours()).padStart(2, '0');
       const mins = String(nepalDate.getMinutes()).padStart(2, '0');
       const secs = String(nepalDate.getSeconds()).padStart(2, '0');
-      const clockStr = `${hrs}:${mins}:${secs}`;
 
       const clockElem = document.getElementById('nepal-clock-top');
-      if (clockElem) clockElem.innerText = clockStr;
+      if (clockElem) clockElem.innerText = `${hrs}:${mins}:${secs}`;
+
+      // Get trek day info for current Nepal date; default to Sep 11 (Day 2) if outside explicit range
+      let currentInfo = TREK_SCHEDULE[dateKey];
+      if (!currentInfo) {
+        currentInfo = TREK_SCHEDULE["2026-09-11"]; // Day 2 (11/09/2026) default
+      }
+
+      const activeDayNum = currentInfo.day;
+
+      // Update header badges
+      const headerBadge = document.getElementById('header-realtime-badge');
+      if (headerBadge) {
+        headerBadge.innerText = `🔥 התאריך היום (נפאל): ${formattedDate} (יום ${activeDayNum} לטרק)`;
+      }
+
+      // Update active cards highlight dynamically
+      for (let d = 1; d <= 6; d++) {
+        const card = document.getElementById(`day-card-${d}`);
+        const dateBadge = document.getElementById(`card-date-badge-${d}`);
+        const activeBadge = document.getElementById(`card-active-badge-${d}`);
+        const callout = document.getElementById(`card-callout-${d}`);
+        const ctaBtn = document.getElementById(`card-cta-btn-${d}`);
+
+        if (card) {
+          if (d === activeDayNum) {
+            card.className = "glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.03] ring-4 ring-cyan-400 shadow-[0_0_50px_rgba(34,211,238,0.6)] flex flex-col justify-between group relative z-20";
+            if (activeBadge) activeBadge.style.display = "flex";
+            if (dateBadge) {
+              dateBadge.className = "absolute bottom-3 right-3 px-3.5 py-1.5 rounded-xl bg-slate-950/90 backdrop-blur-md border-2 border-cyan-400 text-cyan-300 text-sm font-black shadow-xl shadow-cyan-400/50 flex items-center gap-2 animate-pulse";
+            }
+            if (callout) callout.style.display = "flex";
+            if (ctaBtn) {
+              ctaBtn.className = "w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-400 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-cyan-400/50 hover:scale-[1.02] transition duration-300";
+            }
+          } else {
+            card.className = "glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group relative z-10";
+            if (activeBadge) activeBadge.style.display = "none";
+            if (dateBadge) {
+              dateBadge.className = "absolute bottom-3 right-3 text-xs font-bold text-slate-300 bg-slate-950/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-slate-700/80";
+            }
+            if (callout) callout.style.display = "none";
+            if (ctaBtn) {
+              ctaBtn.className = "w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-600/30 transition duration-200";
+            }
+          }
+        }
+      }
     }
 
-    updateNepalRealtimeClock();
-    setInterval(updateNepalRealtimeClock, 1000);
+    updateNepalTracker();
+    setInterval(updateNepalTracker, 1000);
   </script>
 </body>
 </html>
