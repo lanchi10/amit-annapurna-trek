@@ -55,9 +55,9 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>ימים 1–6 באוויר!</span>
+        <span class="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-bold border border-teal-500/30 flex items-center gap-1.5 shadow-lg shadow-teal-500/10">
+          <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+          <span id="header-realtime-badge">🔥 היום בזמן נפאל: יום 2 (11/09)</span>
         </span>
         <button onclick="shareHub()" class="flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white shadow-md shadow-sky-600/30 transition">
           <span>📱</span> שתף שער
@@ -70,10 +70,10 @@
   <section class="relative hero-bg py-16 px-4 border-b border-slate-800 overflow-hidden">
     <div class="max-w-5xl mx-auto text-center relative z-10">
       
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/25 text-sky-300 text-xs font-bold mb-6 backdrop-blur-md">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/10 border border-teal-400/30 text-teal-300 text-xs font-bold mb-6 backdrop-blur-md">
         <span>🇳🇵 נפאל | Annapurna Circuit Trek</span>
         <span>•</span>
-        <span>ספטמבר 2026</span>
+        <span>שעון נפאל (UTC+5:45): <span id="nepal-clock-top" class="font-mono text-white font-extrabold">--:--</span></span>
         <span>•</span>
         <span>קבוצת עמית</span>
       </div>
@@ -83,22 +83,22 @@
       </h1>
       
       <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
-        שער הכניסה המרכזי לכל ימי הטרק בהימלאיה. כאן תוכלו לעקוב יום אחר יום אחר ההתקדמות של עמית: המרחקים, הגבהים, סיפורי השביל וגלריות התמונות המרהיבות.
+        שער הכניסה המרכזי לכל ימי הטרק בהימלאיה. כאן תוכלו לעקוב יום אחר יום אחר ההתקדמות של עמית בזמן אמת: המרחקים, הגבהים, סיפורי השביל וגלריות התמונות המרהיבות.
       </p>
 
       <!-- TREK PROGRESS SUMMARY STATS -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
-        <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-sky-500/40 transition">
-          <div class="text-sky-400 text-2xl sm:text-3xl font-black mb-1">6 ימים</div>
-          <div class="text-[11px] text-slate-400 font-semibold">ימי טרק שהושלמו באוויר</div>
+        <div class="glass-card p-4 rounded-2xl text-center border border-teal-500/40 bg-teal-950/20">
+          <div class="text-teal-400 text-2xl sm:text-3xl font-black mb-1">יום 2 📍</div>
+          <div class="text-[11px] text-teal-300 font-bold">היום בזמן אמת (11/09)</div>
         </div>
         <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-teal-500/40 transition">
-          <div class="text-teal-400 text-2xl sm:text-3xl font-black mb-1">3,540 מ'</div>
-          <div class="text-[11px] text-slate-400 font-semibold">גובה נוכחי (Manang - מנוחה)</div>
+          <div class="text-teal-400 text-2xl sm:text-3xl font-black mb-1">2,190 מ'</div>
+          <div class="text-[11px] text-slate-400 font-semibold">גובה נוכחי (Danaque)</div>
         </div>
         <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-amber-500/40 transition">
-          <div class="text-amber-400 text-2xl sm:text-3xl font-black mb-1">~77 ק"מ</div>
-          <div class="text-[11px] text-slate-400 font-semibold">מרחק הליכה מצטבר</div>
+          <div class="text-amber-400 text-2xl sm:text-3xl font-black mb-1">~25 ק"מ</div>
+          <div class="text-[11px] text-slate-400 font-semibold">מרחק מצטבר עד יום 2</div>
         </div>
         <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-emerald-500/40 transition">
           <div class="text-emerald-400 text-2xl sm:text-3xl font-black mb-1">5,416 מ'</div>
@@ -114,7 +114,7 @@
     <div class="glass-card rounded-3xl p-6 sm:p-8 border border-sky-500/30 shadow-2xl overflow-hidden">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
         <div>
-          <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold border border-sky-500/20">פרופיל גבהים אינטראקטיבי</span>
+          <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-bold border border-teal-500/20">פרופיל גבהים אינטראקטיבי</span>
           <h2 class="text-xl sm:text-2xl font-black text-white mt-1">גרף העלייה לגובה לאורך ימי הטרק</h2>
         </div>
         <div class="text-xs text-slate-400 font-medium">
@@ -184,10 +184,10 @@
             <text x="120" y="132" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="bold">יום 1: Tal</text>
             <text x="120" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">1,700m</text>
 
-            <!-- Day 2 -->
-            <circle cx="220" cy="135" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="2"/>
-            <text x="220" y="117" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="bold">יום 2: Danaque</text>
-            <text x="220" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">2,190m</text>
+            <!-- Day 2 (Active Realtime Day) -->
+            <circle cx="220" cy="135" r="9" fill="#2dd4bf" stroke="#fff" stroke-width="3"/>
+            <text x="220" y="114" text-anchor="middle" fill="#2dd4bf" font-size="11" font-weight="extrabold">יום 2: Danaque 📌 (היום!)</text>
+            <text x="220" y="172" text-anchor="middle" fill="#2dd4bf" font-size="9" font-weight="bold">2,190m</text>
 
             <!-- Day 3 -->
             <circle cx="325" cy="118" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
@@ -204,10 +204,10 @@
             <text x="500" y="73" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="bold">יום 5: Manang</text>
             <text x="500" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">3,540m</text>
 
-            <!-- Day 6 (Active) -->
-            <circle cx="560" cy="90" r="8" fill="#38bdf8" stroke="#fff" stroke-width="3"/>
-            <text x="560" y="70" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">יום 6: מנוחה ואקלום 📌</text>
-            <text x="560" y="172" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="bold">3,540m</text>
+            <!-- Day 6 -->
+            <circle cx="560" cy="90" r="6" fill="#38bdf8" stroke="#fff" stroke-width="2"/>
+            <text x="560" y="73" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="bold">יום 6: מנוחה</text>
+            <text x="560" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">3,540m</text>
 
             <!-- Day 8 -->
             <circle cx="640" cy="75" r="5" fill="#64748b" stroke="#334155" stroke-width="2"/>
@@ -293,14 +293,15 @@
         </div>
       </article>
 
-      <!-- DAY 2 CARD -->
-      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col justify-between group">
+      <!-- DAY 2 CARD (ACTIVE REALTIME DAY - HIGHLIGHTED) -->
+      <article id="day-card-2" class="glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.03] ring-4 ring-teal-400/80 shadow-[0_0_40px_rgba(45,212,191,0.5)] flex flex-col justify-between group relative z-20">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna2.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" alt="יום 2 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-teal-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
-              יום 2 לטרק
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-teal-400 to-emerald-400 text-slate-950 text-xs font-black shadow-lg shadow-teal-500/40 flex items-center gap-1.5 border border-white/40 animate-pulse">
+              <span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+              <span>🔥 היום בזמן אמת (11/09)</span>
             </div>
             <div class="absolute bottom-3 right-3 text-xs font-bold text-teal-300">
               🗓️ 11 בספטמבר 2026
@@ -308,17 +309,22 @@
           </div>
 
           <div class="p-5">
-            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
-              <span>📍 Tal ➔ Danaque</span>
-              <span>2,190 מטר</span>
+            <div class="bg-gradient-to-r from-teal-500/25 via-emerald-500/25 to-teal-500/25 border-2 border-teal-400/50 rounded-xl p-2.5 mb-3 text-center text-xs font-black text-teal-300 shadow-inner flex items-center justify-center gap-2">
+              <span>📍</span>
+              <span>עמוד היום בזמן אמת — Tal ➔ Danaque</span>
             </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition mb-2">
+
+            <div class="flex items-center justify-between text-xs text-teal-300 font-bold mb-2">
+              <span>📍 Tal ➔ Danaque</span>
+              <span>2,190 מטר 🏔️</span>
+            </div>
+            <h3 class="text-lg font-black text-white group-hover:text-teal-300 transition mb-2">
               טיפוס בערוץ הנהר ולינה בדנאקיה
             </h3>
             <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
               מעבר בכפר Dharapani, בדיקת דרכונים בביקורת TIMS, והעפלה בתוך יערות אורנים ואשוחים עד ללינה בכפר Danaque.
             </p>
-            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+            <div class="flex items-center gap-3 text-[11px] text-teal-400 font-semibold mb-4">
               <span>🚶 12 ק"מ</span>
               <span>•</span>
               <span>⏱️ 5 שעות</span>
@@ -329,15 +335,15 @@
         </div>
 
         <div class="p-5 pt-0">
-          <a href="https://anaforna2.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs shadow-lg shadow-teal-600/30 transition duration-200">
-            <span>🚀 פתח אלבום יום 2 (Netlify)</span>
+          <a href="https://anaforna2.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-400 text-slate-950 font-black text-xs shadow-xl shadow-teal-500/50 hover:scale-[1.02] transition duration-300">
+            <span>🚀 פתח אלבום יום 2 בזמן אמת (Netlify)</span>
             <span>➔</span>
           </a>
         </div>
       </article>
 
       <!-- DAY 3 CARD -->
-      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between group">
+      <article id="day-card-3" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between group">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna3.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'" alt="יום 3 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -380,7 +386,7 @@
       </article>
 
       <!-- DAY 4 CARD -->
-      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 flex flex-col justify-between group">
+      <article id="day-card-4" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 flex flex-col justify-between group">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna4.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'" alt="יום 4 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -423,7 +429,7 @@
       </article>
 
       <!-- DAY 5 CARD -->
-      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group">
+      <article id="day-card-5" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna5.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -465,15 +471,14 @@
         </div>
       </article>
 
-      <!-- DAY 6 CARD (ACTIVE HIGHLIGHTED) -->
-      <article class="glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.03] ring-4 ring-sky-400/60 shadow-[0_0_40px_rgba(14,165,233,0.4)] flex flex-col justify-between group relative z-20">
+      <!-- DAY 6 CARD -->
+      <article id="day-card-6" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna6.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-sky-500 to-teal-400 text-white text-xs font-black shadow-lg shadow-sky-500/40 flex items-center gap-1.5 border border-white/20">
-              <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-              <span>🔥 היום הנוכחי (15/09)</span>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-sky-500/80 text-white text-xs font-black shadow-lg">
+              יום 6 (15/09)
             </div>
             <div class="absolute bottom-3 right-3 text-xs font-bold text-sky-300">
               🗓️ 15 בספטמבר 2026
@@ -481,16 +486,11 @@
           </div>
 
           <div class="p-5">
-            <div class="bg-gradient-to-r from-sky-500/20 via-teal-500/20 to-sky-500/20 border border-sky-400/40 rounded-xl p-2 mb-3 text-center text-xs font-black text-sky-300 shadow-inner flex items-center justify-center gap-1.5">
-              <span>📍</span>
-              <span>היומן המעודכן ביותר להיום!</span>
-            </div>
-
             <div class="flex items-center justify-between text-xs text-sky-300 font-bold mb-2">
               <span>📍 Manang (מנוחה ואקלום)</span>
-              <span>3,540 מטר 🏔️</span>
+              <span>3,540 מטר</span>
             </div>
-            <h3 class="text-lg font-black text-white group-hover:text-sky-300 transition mb-2">
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-300 transition mb-2">
               יום מנוחה ב-Manang ואגם הקרח (13 צילומים)
             </h3>
             <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
@@ -507,7 +507,7 @@
         </div>
 
         <div class="p-5 pt-0">
-          <a href="https://anaforna6.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-sky-400 via-teal-300 to-sky-400 text-slate-950 font-black text-xs shadow-xl shadow-sky-500/50 hover:scale-[1.02] transition duration-300">
+          <a href="https://anaforna6.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-600/30 transition duration-200">
             <span>🚀 פתח אלבום יום 6 (Netlify)</span>
             <span>➔</span>
           </a>
@@ -532,7 +532,7 @@
         </div>
         <h4 class="font-bold text-sm text-slate-200 mb-1">Manang ➔ Yak Kharka</h4>
         <p class="text-[11px] text-slate-400 font-light mb-3">3,540מ' ➔ 4,018מ' • חציית רף 4,000 המטרים!</p>
-        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 מחר</span>
+        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 בקרוב</span>
       </div>
 
       <!-- Day 8 Upcoming -->
@@ -583,6 +583,26 @@
         alert('הקישור לשער הראשי הועתק ללוח!');
       }
     }
+
+    // Dynamic Nepal Real-Time Clock & Auto-Highlighter
+    function updateNepalRealtimeClock() {
+      const now = new Date();
+      // UTC time + 5h 45m
+      const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const nepalOffsetMs = (5 * 60 + 45) * 60000;
+      const nepalDate = new Date(utcMs + nepalOffsetMs);
+
+      const hrs = String(nepalDate.getHours()).padStart(2, '0');
+      const mins = String(nepalDate.getMinutes()).padStart(2, '0');
+      const secs = String(nepalDate.getSeconds()).padStart(2, '0');
+      const clockStr = `${hrs}:${mins}:${secs}`;
+
+      const clockElem = document.getElementById('nepal-clock-top');
+      if (clockElem) clockElem.innerText = clockStr;
+    }
+
+    updateNepalRealtimeClock();
+    setInterval(updateNepalRealtimeClock, 1000);
   </script>
 </body>
 </html>
