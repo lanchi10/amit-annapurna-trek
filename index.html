@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>עמית בסובב אנאפורנה 🇳🇵 — שער הכניסה ליומן המסע המשפחתי</title>
+  <title>עמית בסובב אנאפורנה 🇳🇵 — שער הכניסה ליומן המסע של עמית</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +21,9 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
     .glass-card-active {
-      background: rgba(14, 165, 233, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.25);
+      background: rgba(14, 165, 233, 0.12);
+      border: 2px solid rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
     }
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -50,7 +50,7 @@
         </div>
         <div>
           <h1 class="font-black text-base sm:text-lg leading-tight text-white tracking-tight">עמית בסובב אנאפורנה</h1>
-          <p class="text-xs text-sky-400 font-semibold">שער הכניסה הראשי ליומן המסע</p>
+          <p class="text-xs text-sky-400 font-semibold">שער הכניסה הראשי ליומן המסע של עמית</p>
         </div>
       </div>
 
@@ -79,7 +79,7 @@
       </div>
 
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
-        עמית בסובב אנאפורנה <span class="gradient-text">יומן המסע המשפחתי</span>
+        עמית בסובב אנאפורנה <span class="gradient-text">יומן המסע של עמית</span>
       </h1>
       
       <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
@@ -465,14 +465,15 @@
         </div>
       </article>
 
-      <!-- DAY 6 CARD (ACTIVE HIGHLIGHT) -->
-      <article class="glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20 flex flex-col justify-between group">
+      <!-- DAY 6 CARD (ACTIVE HIGHLIGHTED) -->
+      <article class="glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.03] ring-4 ring-sky-400/60 shadow-[0_0_40px_rgba(14,165,233,0.4)] flex flex-col justify-between group relative z-20">
         <div>
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
             <img src="https://anaforna6.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-sky-500 text-white text-xs font-black shadow-lg flex items-center gap-1">
-              <span>📌 יום 6 (15/09)</span>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-gradient-to-r from-sky-500 to-teal-400 text-white text-xs font-black shadow-lg shadow-sky-500/40 flex items-center gap-1.5 border border-white/20">
+              <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              <span>🔥 היום הנוכחי (15/09)</span>
             </div>
             <div class="absolute bottom-3 right-3 text-xs font-bold text-sky-300">
               🗓️ 15 בספטמבר 2026
@@ -480,6 +481,11 @@
           </div>
 
           <div class="p-5">
+            <div class="bg-gradient-to-r from-sky-500/20 via-teal-500/20 to-sky-500/20 border border-sky-400/40 rounded-xl p-2 mb-3 text-center text-xs font-black text-sky-300 shadow-inner flex items-center justify-center gap-1.5">
+              <span>📍</span>
+              <span>היומן המעודכן ביותר להיום!</span>
+            </div>
+
             <div class="flex items-center justify-between text-xs text-sky-300 font-bold mb-2">
               <span>📍 Manang (מנוחה ואקלום)</span>
               <span>3,540 מטר 🏔️</span>
@@ -501,7 +507,7 @@
         </div>
 
         <div class="p-5 pt-0">
-          <a href="https://anaforna6.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-400 hover:to-teal-400 text-white font-bold text-xs shadow-lg shadow-sky-500/30 transition duration-200">
+          <a href="https://anaforna6.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-sky-400 via-teal-300 to-sky-400 text-slate-950 font-black text-xs shadow-xl shadow-sky-500/50 hover:scale-[1.02] transition duration-300">
             <span>🚀 פתח אלבום יום 6 (Netlify)</span>
             <span>➔</span>
           </a>
@@ -558,7 +564,7 @@
   <!-- FOOTER -->
   <footer class="mt-20 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
     <div class="max-w-7xl mx-auto px-4">
-      <p class="mb-2">עמית בסובב אנאפורנה 🇳🇵 — יומן מסע משפחתי מעודכן</p>
+      <p class="mb-2">עמית בסובב אנאפורנה 🇳🇵 — יומן המסע של עמית</p>
       <p class="text-[11px] text-slate-600">כל הזכויות שמורות למשפחת לנדסברג • מופעל על ידי GitHub Pages & Netlify</p>
     </div>
   </footer>
