@@ -568,6 +568,59 @@
         </div>
       </article>
 
+      <!-- DAY 7 CARD -->
+      <article id="day-card-7" class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group relative z-10">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna7.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 7 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            
+            <!-- DYNAMIC TOP LEFT BADGE FOR ACTIVE DAY -->
+            <div id="card-active-badge-7" class="absolute top-3 left-3 px-3.5 py-1.5 rounded-full bg-cyan-400 text-slate-950 text-xs font-black shadow-lg shadow-cyan-400/50 flex items-center gap-2 border border-white/40 z-30" style="display:none;"></div>
+
+            <!-- TOP RIGHT DAY BADGE -->
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-sky-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
+              יום 7 לטרק (16/09)
+            </div>
+
+            <!-- DATE BADGE -->
+            <div id="card-date-badge-7" class="absolute bottom-3 right-3 text-xs font-bold text-slate-300 bg-slate-950/70 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-slate-700/80">
+              🗓️ 16 בספטמבר 2026
+            </div>
+          </div>
+
+          <div class="p-5">
+            <!-- DYNAMIC CALLOUT FOR ACTIVE DAY -->
+            <div id="card-callout-7" class="bg-gradient-to-r from-cyan-500/30 via-teal-500/30 to-cyan-500/30 border-2 border-cyan-400 rounded-xl p-3 mb-3 text-center text-xs font-black text-cyan-200 shadow-xl flex items-center justify-center gap-2" style="display:none;"></div>
+
+            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+              <span>📍 Manang ➔ Yak Kharka</span>
+              <span>4,018 מטר</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-300 transition mb-2">
+              חציית רף 4,000 המטרים ולינה ביאק קארקה (18 צילומים)
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              טיפוס מתון במעלה עמק גונסאנג אל Yak Kharka (4,018מ'). יום קצר ומרוכז שנועד לאקלום הגוף לדלילות החמצן מעל 4,000 מטר.
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+              <span>🚶 11 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 5 שעות</span>
+              <span>•</span>
+              <span>📸 18 צילומים</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a id="card-cta-btn-7" href="https://anaforna7.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-600/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 7 (Netlify)</span>
+            <span>➔</span>
+          </a>
+        </div>
+      </article>
+
     </div>
 
     <!-- UPCOMING DAYS SECTION -->
@@ -705,7 +758,7 @@ ${window.location.href}`;
         }
       }
 
-      for (let d = 1; d <= 6; d++) {
+      for (let d = 1; d <= 7; d++) {
         const card = document.getElementById(`day-card-${d}`);
         const activeBadge = document.getElementById(`card-active-badge-${d}`);
         const dateBadge = document.getElementById(`card-date-badge-${d}`);
