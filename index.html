@@ -1,383 +1,513 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>סובב אנאפורנה - המסלול של עמית | ימים 2-11</title>
+  <title>עמית בסובב אנאפורנה 🇳🇵 — שער הכניסה ליומן המסע המשפחתי</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Assistant', 'Heebo', sans-serif;
+    }
+    .hero-bg {
+      background: radial-gradient(circle at top center, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0.98) 70%), linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-card-active {
+      background: rgba(14, 165, 233, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.25);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen selection:bg-sky-500 selection:text-white pb-24">
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-container">
-      <div class="brand">
-        <span class="mountain-icon">🏔️</span>
-        <div class="brand-text">
-          <h1>מסלול סובב אנאפורנה</h1>
-          <p class="subtitle">המסלול של עמית • ימים 2 עד 11 • יומן מסע וטבלת נתונים</p>
+  <!-- TOP HEADER / NAV BAR -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-teal-400 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          <span class="text-xl">🏔️</span>
+        </div>
+        <div>
+          <h1 class="font-black text-base sm:text-lg leading-tight text-white tracking-tight">עמית בסובב אנאפורנה</h1>
+          <p class="text-xs text-sky-400 font-semibold">שער הכניסה הראשי ליומן המסע</p>
         </div>
       </div>
-      <div class="badge-rtl">Mobile First • עברית</div>
+
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>ימים 1–4 באוויר!</span>
+        </span>
+        <button onclick="shareHub()" class="flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white shadow-md shadow-sky-600/30 transition">
+          <span>📱</span> שתף שער
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Banner / Intro -->
-  <section class="hero-banner">
-    <div class="container">
-      <div class="hero-card">
-        <h2>המסע של עמית ברכס האנאפורנה 🇳🇵</h2>
-        <p>תמונות, גבהים, תאריכים, פרטי הלינה וטבלת המרחקים המלאה של המסלול. לחצי על כל יום כדי לפתוח את העמוד המלא!</p>
+  <!-- HERO BANNER -->
+  <section class="relative hero-bg py-16 px-4 border-b border-slate-800 overflow-hidden">
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/25 text-sky-300 text-xs font-bold mb-6 backdrop-blur-md">
+        <span>🇳🇵 נפאל | Annapurna Circuit Trek</span>
+        <span>•</span>
+        <span>ספטמבר 2026</span>
+        <span>•</span>
+        <span>קבוצת עמית</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+        עמית בסובב אנאפורנה <span class="gradient-text">יומן המסע המשפחתי</span>
+      </h1>
+      
+      <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+        שער הכניסה המרכזי לכל ימי הטרק בהימלאיה. כאן תוכלו לעקוב יום אחר יום אחר ההתקדמות של עמית: המרחקים, הגבהים, סיפורי השביל וגלריות התמונות המרהיבות.
+      </p>
+
+      <!-- TREK PROGRESS SUMMARY STATS -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto">
+        <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-sky-500/40 transition">
+          <div class="text-sky-400 text-2xl sm:text-3xl font-black mb-1">4 ימים</div>
+          <div class="text-[11px] text-slate-400 font-semibold">ימי טרק שהושלמו באוויר</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-teal-500/40 transition">
+          <div class="text-teal-400 text-2xl sm:text-3xl font-black mb-1">3,230 מ'</div>
+          <div class="text-[11px] text-slate-400 font-semibold">גובה נוכחי (Upper Pisang)</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-amber-500/40 transition">
+          <div class="text-amber-400 text-2xl sm:text-3xl font-black mb-1">~60 ק"מ</div>
+          <div class="text-[11px] text-slate-400 font-semibold">מרחק הליכה מצטבר</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="text-emerald-400 text-2xl sm:text-3xl font-black mb-1">5,416 מ'</div>
+          <div class="text-[11px] text-slate-400 font-semibold">שיא הגובה: Thorong La</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ELEVATION PROFILE CHART (GRAPHIC MAP) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20 mb-12">
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border border-sky-500/30 shadow-2xl overflow-hidden">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-bold border border-sky-500/20">פרופיל גבהים אינטראקטיבי</span>
+          <h2 class="text-xl sm:text-2xl font-black text-white mt-1">גרף העלייה לגובה לאורך ימי הטרק</h2>
+        </div>
+        <div class="text-xs text-slate-400 font-medium">
+          מ-Syange (1,100מ') ועד מעבר ההרים Thorong La Pass (5,416מ')
+        </div>
+      </div>
+
+      <!-- SVG ELEVATION CHART -->
+      <div class="w-full overflow-x-auto no-scrollbar">
+        <div class="min-w-[750px]">
+          <svg viewBox="0 0 900 200" class="w-full h-auto bg-slate-950/60 rounded-2xl border border-slate-800/80 p-2">
+            <defs>
+              <linearGradient id="grad-area" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0284c7" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#0f172a" stop-opacity="0.0"/>
+              </linearGradient>
+              <linearGradient id="grad-line" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="40%" stop-color="#2dd4bf"/>
+                <stop offset="70%" stop-color="#f59e0b"/>
+                <stop offset="100%" stop-color="#ef4444"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Altitude Grid lines -->
+            <line x1="50" y1="40" x2="850" y2="40" stroke="#334155" stroke-dasharray="4" stroke-width="1"/>
+            <text x="40" y="44" text-anchor="end" fill="#64748b" font-size="10">5,000m</text>
+
+            <line x1="50" y1="90" x2="850" y2="90" stroke="#334155" stroke-dasharray="4" stroke-width="1"/>
+            <text x="40" y="94" text-anchor="end" fill="#64748b" font-size="10">3,500m</text>
+
+            <line x1="50" y1="140" x2="850" y2="140" stroke="#334155" stroke-dasharray="4" stroke-width="1"/>
+            <text x="40" y="144" text-anchor="end" fill="#64748b" font-size="10">2,000m</text>
+
+            <!-- Elevation Fill Area -->
+            <polygon points="
+              60,170
+              120,150
+              220,135
+              325,118
+              430,100
+              535,90
+              640,75
+              745,60
+              815,25
+              860,85
+              860,170
+            " fill="url(#grad-area)"/>
+
+            <!-- Elevation Line Path -->
+            <path d="
+              M 60,170
+              L 120,150
+              L 220,135
+              L 325,118
+              L 430,100
+              L 535,90
+              L 640,75
+              L 745,60
+              L 815,25
+              L 860,85
+            " fill="none" stroke="url(#grad-line)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Waypoint Nodes -->
+            <!-- Day 1 -->
+            <circle cx="120" cy="150" r="6" fill="#38bdf8" stroke="#fff" stroke-width="2"/>
+            <text x="120" y="132" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="bold">יום 1: Tal</text>
+            <text x="120" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">1,700m</text>
+
+            <!-- Day 2 -->
+            <circle cx="220" cy="135" r="6" fill="#2dd4bf" stroke="#fff" stroke-width="2"/>
+            <text x="220" y="117" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="bold">יום 2: Danaque</text>
+            <text x="220" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">2,190m</text>
+
+            <!-- Day 3 -->
+            <circle cx="325" cy="118" r="6" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+            <text x="325" y="100" text-anchor="middle" fill="#fcd34d" font-size="10" font-weight="bold">יום 3: Chame</text>
+            <text x="325" y="172" text-anchor="middle" fill="#94a3b8" font-size="9">2,710m</text>
+
+            <!-- Day 4 (Active) -->
+            <circle cx="430" cy="100" r="8" fill="#38bdf8" stroke="#fff" stroke-width="3"/>
+            <text x="430" y="80" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="bold">יום 4: Upper Pisang 📌</text>
+            <text x="430" y="172" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="bold">3,230m</text>
+
+            <!-- Day 5 -->
+            <circle cx="535" cy="90" r="5" fill="#64748b" stroke="#334155" stroke-width="2"/>
+            <text x="535" y="73" text-anchor="middle" fill="#64748b" font-size="10">יום 5: Manang</text>
+            <text x="535" y="172" text-anchor="middle" fill="#64748b" font-size="9">3,540m</text>
+
+            <!-- Day 8 -->
+            <circle cx="640" cy="75" r="5" fill="#64748b" stroke="#334155" stroke-width="2"/>
+            <text x="640" y="58" text-anchor="middle" fill="#64748b" font-size="10">Yak Kharka</text>
+            <text x="640" y="172" text-anchor="middle" fill="#64748b" font-size="9">4,018m</text>
+
+            <!-- Day 9 -->
+            <circle cx="745" cy="60" r="5" fill="#64748b" stroke="#334155" stroke-width="2"/>
+            <text x="745" y="43" text-anchor="middle" fill="#64748b" font-size="10">High Camp</text>
+
+            <!-- Day 10 Peak -->
+            <circle cx="815" cy="25" r="7" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <text x="815" y="12" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="bold">Thorong La (5,416m) 🏔️</text>
+
+            <!-- Day 10 Muktinath -->
+            <circle cx="860" cy="85" r="5" fill="#64748b" stroke="#334155" stroke-width="2"/>
+            <text x="860" y="103" text-anchor="middle" fill="#64748b" font-size="9">Muktinath</text>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Summary Statistics Section -->
-  <section class="stats-section container">
-    <div class="stats-card">
-      <div class="stats-header">
-        <h3>🏔️ Annapurna Circuit — טבלת מרחקים וגבהים מסכמת</h3>
-        <p class="stats-subtitle">ימים 2-11 (09/09-19/09) · קבוצת יוסי · מתוקן ומאומת</p>
+  <!-- MAIN DAY CARDS CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">אלבומי ימי הטרק (Day Albums)</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">לחץ על כל יום כדי לפתוח את האלבום המלא והמפורט</p>
       </div>
 
-      <div class="stats-summary-grid">
-        <div class="summary-box">
-          <span class="summary-val">~90-100 ק"מ</span>
-          <span class="summary-lbl">סה"כ הליכה (ימים 2-10)</span>
-        </div>
-        <div class="summary-box">
-          <span class="summary-val">3,716 מ'</span>
-          <span class="summary-lbl">עלייה נטו (Tal➔Thorong La)</span>
-        </div>
-        <div class="summary-box">
-          <span class="summary-val">~4,700-5,500 מ'</span>
-          <span class="summary-lbl">עלייה מצטברת (כולל ביניים)</span>
-        </div>
-        <div class="summary-box highlight-box">
-          <span class="summary-val">-1,616 מ'</span>
-          <span class="summary-lbl">ירידה חדה — יום 10 בלבד</span>
-        </div>
-      </div>
-
-      <div class="table-responsive">
-        <table class="summary-table">
-          <thead>
-            <tr>
-              <th>יום (תאריך)</th>
-              <th>מקטע</th>
-              <th>מרחק</th>
-              <th>זמן הליכה</th>
-              <th>גובה (מ➔עד)</th>
-              <th>עלייה מצטברת</th>
-              <th>ירידה מצטברת</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="highlight-row">
-              <td><strong>2 (09/09)</strong></td>
-              <td>Syange ➔ Tal <span class="badge-start">היום הראשון לטרק 🥾</span></td>
-              <td>~9-11 ק"מ</td>
-              <td>4-5 ש'</td>
-              <td>1,290 ➔ 1,700 מ'</td>
-              <td class="text-up">+500 עד 650 מ'</td>
-              <td class="text-down">100- עד 200- מ'</td>
-            </tr>
-            <tr>
-              <td><strong>3 (11/09)</strong></td>
-              <td>Tal ➔ Danaque</td>
-              <td>~10-13 ק"מ</td>
-              <td>6-7 ש'</td>
-              <td>1,700 ➔ 2,300 מ'</td>
-              <td class="text-up">+1,050 עד 1,250 מ'</td>
-              <td class="text-down">550- עד 700- מ'</td>
-            </tr>
-            <tr>
-              <td><strong>4 (12/09)</strong></td>
-              <td>Danaque ➔ Chame</td>
-              <td>~10-14 ק"מ</td>
-              <td>6-7 ש'</td>
-              <td>2,300 ➔ 2,710 מ'</td>
-              <td class="text-up">+700 עד 900 מ'</td>
-              <td class="text-down">300- עד 400- מ'</td>
-            </tr>
-            <tr>
-              <td><strong>5 (13/09)</strong></td>
-              <td>Chame ➔ Upper Pisang</td>
-              <td>~14-17 ק"מ</td>
-              <td>6-7 ש'</td>
-              <td>2,710 ➔ 3,230 מ'</td>
-              <td class="text-up">+600 עד 750 מ'</td>
-              <td class="text-down">100- עד 200- מ'</td>
-            </tr>
-            <tr>
-              <td><strong>6 (14/09)</strong></td>
-              <td>Upper Pisang ➔ Manang</td>
-              <td>~16-19 ק"מ</td>
-              <td>7-9 ש'</td>
-              <td>3,230 ➔ 3,540 מ'</td>
-              <td class="text-up">+450 עד 600 מ'</td>
-              <td class="text-down">150- עד 250- מ'</td>
-            </tr>
-            <tr class="rest-row">
-              <td><strong>7 (15/09)</strong></td>
-              <td>Manang — מנוחה/אקלום ✨</td>
-              <td>0 <small>(Ice Lake: ~8-10 ק"מ)</small></td>
-              <td>גמיש</td>
-              <td>3,540 מ' <small>(Ice Lake: 4,640 מ')</small></td>
-              <td class="text-up">0 <small>(אופציונלי: +1,100 מ')</small></td>
-              <td class="text-down">0 <small>(אופציונלי: 1,100- מ')</small></td>
-            </tr>
-            <tr>
-              <td><strong>8 (16/09)</strong></td>
-              <td>Manang ➔ Yak Kharka</td>
-              <td>~10-12 ק"מ</td>
-              <td>5 ש'</td>
-              <td>3,540 ➔ 4,018 מ'</td>
-              <td class="text-up">+500 עד 550 מ'</td>
-              <td class="text-down">30- עד 60- מ'</td>
-            </tr>
-            <tr>
-              <td><strong>9 (17/09)</strong></td>
-              <td>Yak Kharka ➔ Thorong Phedi</td>
-              <td>~7-9 ק"מ</td>
-              <td>6-7 ש'</td>
-              <td>4,018 ➔ 4,450 מ'</td>
-              <td class="text-up">+430 עד 500 מ'</td>
-              <td class="text-down">20- עד 50- מ'</td>
-            </tr>
-            <tr class="peak-row">
-              <td><strong>10 (18/09)</strong></td>
-              <td>Phedi ➔ Thorong La ➔ Muktinath 🏔️</td>
-              <td>~15-18 ק"מ</td>
-              <td>8-9 ש'</td>
-              <td>4,450 ➔ 5,416 ➔ 3,800 מ'</td>
-              <td class="text-up">+966 מ' <small>(לפסגה)</small></td>
-              <td class="text-down">1,616- מ' <small>(מהפסגה)</small></td>
-            </tr>
-            <tr>
-              <td><strong>11 (19/09)</strong></td>
-              <td>Muktinath ➔ Pokhara 🚌</td>
-              <td>נסיעה ברכב</td>
-              <td>7-8 ש' נסיעה</td>
-              <td>3,800 ➔ ~800 מ'</td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="important-note">
-        <p><strong>💡 הערה חשובה:</strong> "עלייה/ירידה מצטברת" כוללת גם קטעי עלייה וירידה ביניים באותו יום הליכה (המסלול אינו קו ישר) — לכן היא תמיד גבוהה מהפרש הגובה הנטו בין נקודת ההתחלה לסיום. יום 10 (מעבר Thorong La) הוא היום הפיזי התובעני ביותר בטרק: כמעט 1,000 מ' עלייה ואז מיד 1,600 מ' ירידה באותו יום.</p>
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1.5 rounded-xl bg-slate-800 text-sky-400 text-xs font-bold border border-slate-700">
+          סדר כרונולוגי לפי ימי טרק
+        </span>
       </div>
     </div>
-  </section>
 
-  <!-- Main Grid Container (List View) -->
-  <main class="main-content container" id="list-view">
-    <div class="section-title">
-      <h3>📅 כרטיסי הימים במסלול (ימים 2–10)</h3>
-    </div>
+    <!-- CARDS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
 
-    <div class="cards-grid">
-
-      <!-- Day 2 Card -->
-      <article class="day-card" data-day="2">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-04-chame.png" alt="יום 2 - Syange to Tal" loading="lazy">
-          <span class="day-badge">יום 2 🥾</span>
-          <span class="alt-badge">1,290 ➔ 1,700 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 09/09</span>
-            <span class="card-loc">📍 Syange ➔ Tal</span>
+      <!-- DAY 1 CARD -->
+      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/10 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna1.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'" alt="יום 1 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-sky-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
+              יום 1 לטרק
+            </div>
+            <div class="absolute bottom-3 right-3 text-xs font-bold text-sky-300">
+              🗓️ 10 בספטמבר 2026
+            </div>
           </div>
-          <h4 class="card-title">היום הראשון לטרק: מ-Syange ל-Tal</h4>
-          <p class="card-desc">הליכה ראשונה בטרק! מעבר בנופים ירוקים שופעים, גשרים תלויים ומפלים מרהיבים עד לכפר Tal.</p>
-          <button class="btn-open-day" onclick="openDay(2)">פתחי את היום ➔</button>
+
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+              <span>📍 Syange ➔ Tal</span>
+              <span>1,700 מטר</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-sky-300 transition mb-2">
+              התחלת הטרק: מנפלאות נהר המרשיאנגדי אל הכפר טאל
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              הליכה ראשונה לצד מפלי סיאנג'ה וצ'אמצ'ה השואטים, חציית גשרים תלויים והגעה מרגשת לכפר הקסום Tal (1,700מ').
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+              <span>🚶 13 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 5 שעות</span>
+              <span>•</span>
+              <span>📸 9 צילומים</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a href="https://anaforna1.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-600/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 1 (Netlify)</span>
+            <span>➔</span>
+          </a>
         </div>
       </article>
 
-      <!-- Day 4 Card -->
-      <article class="day-card" data-day="4">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-04-chame.png" alt="יום 4 - Chame" loading="lazy">
-          <span class="day-badge">יום 4</span>
-          <span class="alt-badge">2,710 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 12/09</span>
-            <span class="card-loc">📍 Chame</span>
+      <!-- DAY 2 CARD -->
+      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna2.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'" alt="יום 2 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-teal-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
+              יום 2 לטרק
+            </div>
+            <div class="absolute bottom-3 right-3 text-xs font-bold text-teal-300">
+              🗓️ 11 בספטמבר 2026
+            </div>
           </div>
-          <h4 class="card-title">לינה ב-Chame</h4>
-          <p class="card-desc">הגעה ל-Chame, נופי נהר המרשיאנגדי, גלגלי תפילה בדרך ומנוחה בכפר.</p>
-          <button class="btn-open-day" onclick="openDay(4)">פתחי את היום ➔</button>
+
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+              <span>📍 Tal ➔ Danaque</span>
+              <span>2,190 מטר</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-teal-300 transition mb-2">
+              טיפוס בערוץ הנהר ולינה בדנאקיה
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              מעבר בכפר Dharapani, בדיקת דרכונים בביקורת TIMS, והעפלה בתוך יערות אורנים ואשוחים עד ללינה בכפר Danaque.
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+              <span>🚶 12 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 5 שעות</span>
+              <span>•</span>
+              <span>📸 9 צילומים</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a href="https://anaforna2.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-xs shadow-lg shadow-teal-600/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 2 (Netlify)</span>
+            <span>➔</span>
+          </a>
         </div>
       </article>
 
-      <!-- Day 5 Card -->
-      <article class="day-card" data-day="5">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-05-upper-pisang.png" alt="יום 5 - Upper Pisang" loading="lazy">
-          <span class="day-badge">יום 5</span>
-          <span class="alt-badge">3,230 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 13/09</span>
-            <span class="card-loc">📍 Upper Pisang</span>
+      <!-- DAY 3 CARD -->
+      <article class="glass-card rounded-3xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/10 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna3.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80'" alt="יום 3 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-amber-500/80 backdrop-blur-md text-white text-xs font-black shadow-lg">
+              יום 3 לטרק
+            </div>
+            <div class="absolute bottom-3 right-3 text-xs font-bold text-amber-300">
+              🗓️ 12 בספטמבר 2026
+            </div>
           </div>
-          <h4 class="card-title">לינה ב-Upper Pisang</h4>
-          <p class="card-desc">עלייה לפיסאנג העליונה, נוף עוצר נשימה לעמק, מנזר טיבטי עתיק וגומפה.</p>
-          <button class="btn-open-day" onclick="openDay(5)">פתחי את היום ➔</button>
+
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-slate-400 font-semibold mb-2">
+              <span>📍 Danaque ➔ Chame</span>
+              <span>2,710 מטר</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-amber-300 transition mb-2">
+              עליות האבן ל-Timang והגעה ל-Chame
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              הטיפוס המאתגר במדרגות האבן ל-Timang, תצפית אל פסגת Manaslu והגעה מרגשת לבירת מחוז מנאנג - Chame.
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-slate-400 font-medium mb-4">
+              <span>🚶 15 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 6 שעות</span>
+              <span>•</span>
+              <span>📸 10 צילומים</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a href="https://anaforna3.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs shadow-lg shadow-amber-600/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 3 (Netlify)</span>
+            <span>➔</span>
+          </a>
         </div>
       </article>
 
-      <!-- Day 6 Card -->
-      <article class="day-card" data-day="6">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-06-manang.png" alt="יום 6 - Manang" loading="lazy">
-          <span class="day-badge">יום 6</span>
-          <span class="alt-badge">3,540 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 14/09</span>
-            <span class="card-loc">📍 Manang</span>
+      <!-- DAY 4 CARD (ACTIVE HIGHLIGHT) -->
+      <article class="glass-card glass-card-active rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20 flex flex-col justify-between group">
+        <div>
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-900">
+            <img src="https://anaforna4.netlify.app/favicon.ico" onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'" alt="יום 4 לטרק" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-black shadow-lg flex items-center gap-1">
+              <span>📌 יום 4 לטרק</span>
+            </div>
+            <div class="absolute bottom-3 right-3 text-xs font-bold text-sky-300">
+              🗓️ 13 בספטמבר 2026
+            </div>
           </div>
-          <h4 class="card-title">לינה ב-Manang</h4>
-          <p class="card-desc">הגעה לכפר מנאנג, נופי אגמי העמק והרי גנגפורנה המושלגים.</p>
-          <button class="btn-open-day" onclick="openDay(6)">פתחי את היום ➔</button>
-        </div>
-      </article>
 
-      <!-- Day 7 Card (Approved Image) -->
-      <article class="day-card card-approved" data-day="7">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-07-manang-rest.png" alt="יום 7 - מנוחה ואקלים במנאנג" loading="lazy">
-          <span class="day-badge badge-gold">יום 7★</span>
-          <span class="alt-badge">3,540 מ'</span>
-          <span class="approved-tag">✨ התמונה המאושרת</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 15/09</span>
-            <span class="card-loc">📍 Manang</span>
+          <div class="p-5">
+            <div class="flex items-center justify-between text-xs text-sky-300 font-bold mb-2">
+              <span>📍 Chame ➔ Upper Pisang</span>
+              <span>3,230 מטר 🏔️</span>
+            </div>
+            <h3 class="text-lg font-black text-white group-hover:text-sky-300 transition mb-2">
+              קיר פאונגדה דאנדה וחציית קו 3,000 מטר!
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+              מצוק הסלע הענק Paungda Danda (1,500מ'), מטעי התפוחים ב-Bhratang, תצפית Pisang Peak (6,091מ') ולינה בכפר העתיק Upper Pisang.
+            </p>
+            <div class="flex items-center gap-3 text-[11px] text-sky-400 font-semibold mb-4">
+              <span>🚶 16 ק"מ</span>
+              <span>•</span>
+              <span>⏱️ 7 שעות</span>
+              <span>•</span>
+              <span>📸 14 צילומים</span>
+            </div>
           </div>
-          <h4 class="card-title">יום מנוחה ואקלים במנאנג</h4>
-          <p class="card-desc">יום מנוחה מתוכנן, התאקלמות לגובה, הליכה קלה לפי הרגשה ואגם גנגפורנה הטורקיז.</p>
-          <button class="btn-open-day btn-gold" onclick="openDay(7)">פתחי את היום ➔</button>
         </div>
-      </article>
 
-      <!-- Day 8 Card -->
-      <article class="day-card" data-day="8">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-08-yak-kharka.png" alt="יום 8 - Yak Kharka" loading="lazy">
-          <span class="day-badge">יום 8</span>
-          <span class="alt-badge">4,018 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 16/09</span>
-            <span class="card-loc">📍 Yak Kharka</span>
-          </div>
-          <h4 class="card-title">לינה ב-Yak Kharka</h4>
-          <p class="card-desc">חציית קו 4,000 המטרים, שטחי מרעה של יאקים, אוויר דליל ונוף פתוח להרים.</p>
-          <button class="btn-open-day" onclick="openDay(8)">פתחי את היום ➔</button>
-        </div>
-      </article>
-
-      <!-- Day 9 Card -->
-      <article class="day-card" data-day="9">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-09-thorong-phedi.png" alt="יום 9 - Thorong Phedi" loading="lazy">
-          <span class="day-badge">יום 9</span>
-          <span class="alt-badge">4,450 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 17/09</span>
-            <span class="card-loc">📍 Thorong Phedi</span>
-          </div>
-          <h4 class="card-title">לינה ב-Thorong Phedi</h4>
-          <p class="card-desc">מחנה הבסיס לפני מעבר טורונג לה, התארגנות ומנוחה לקראת הטיפוס לפסגה.</p>
-          <button class="btn-open-day" onclick="openDay(9)">פתחי את היום ➔</button>
-        </div>
-      </article>
-
-      <!-- Day 10 Card -->
-      <article class="day-card" data-day="10">
-        <div class="card-image-wrap">
-          <img src="assets/images/day-10-muktinath.png" alt="יום 10 - Muktinath" loading="lazy">
-          <span class="day-badge">יום 10</span>
-          <span class="alt-badge">מעבר 5,416 מ' | לינה 3,800 מ'</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-date">🗓️ 18/09</span>
-            <span class="card-loc">📍 Thorong La ➔ Muktinath</span>
-          </div>
-          <h4 class="card-title">חציית מעבר טורונג לה ולינה ב-Muktinath</h4>
-          <p class="card-desc">יום השיא של המסלול! העפלה לפסגת מעבר Thorong La בגובה 5,416 מ' וירידה למוקטינאת'.</p>
-          <button class="btn-open-day" onclick="openDay(10)">פתחי את היום ➔</button>
+        <div class="p-5 pt-0">
+          <a href="https://anaforna4.netlify.app/" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-teal-500 hover:from-sky-400 hover:to-teal-400 text-white font-bold text-xs shadow-lg shadow-sky-500/30 transition duration-200">
+            <span>🚀 פתח אלבום יום 4 (Netlify)</span>
+            <span>➔</span>
+          </a>
         </div>
       </article>
 
     </div>
+
+    <!-- UPCOMING DAYS SECTION -->
+    <div class="mt-16 mb-8">
+      <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">ימי הטרק הבאים במסלול (Upcoming Days)</h3>
+      <p class="text-xs sm:text-sm text-slate-400">הימים שיעלו בהמשך הטרק עם הגעת התמונות והעדכונים מעמית</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      
+      <!-- Day 5 Upcoming -->
+      <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 opacity-75">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold mb-2">
+          <span>יום 5 לטרק</span>
+          <span>14/09</span>
+        </div>
+        <h4 class="font-bold text-sm text-slate-200 mb-1">Upper Pisang ➔ Manang</h4>
+        <p class="text-[11px] text-slate-400 font-light mb-3">3,230מ' ➔ 3,540מ' • כניסה לעמק מנאנג הרחב</p>
+        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 מחר</span>
+      </div>
+
+      <!-- Day 6 Upcoming -->
+      <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 opacity-75">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold mb-2">
+          <span>יום 6 לטרק</span>
+          <span>15/09</span>
+        </div>
+        <h4 class="font-bold text-sm text-slate-200 mb-1">Manang (יום מנוחה)</h4>
+        <p class="text-[11px] text-slate-400 font-light mb-3">3,540מ' • יום התאקלמות ואגם הקרח (Ice Lake)</p>
+        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 בקרוב</span>
+      </div>
+
+      <!-- Day 7 Upcoming -->
+      <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 opacity-75">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold mb-2">
+          <span>יום 7 לטרק</span>
+          <span>16/09</span>
+        </div>
+        <h4 class="font-bold text-sm text-slate-200 mb-1">Manang ➔ Yak Kharka</h4>
+        <p class="text-[11px] text-slate-400 font-light mb-3">3,540מ' ➔ 4,018מ' • חציית רף 4,000 המטרים!</p>
+        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 בקרוב</span>
+      </div>
+
+      <!-- Day 8 Upcoming -->
+      <div class="bg-slate-900/60 p-4 rounded-2xl border border-slate-800/80 opacity-75">
+        <div class="flex items-center justify-between text-xs text-slate-400 font-bold mb-2">
+          <span>יום 8 לטרק</span>
+          <span>17/09</span>
+        </div>
+        <h4 class="font-bold text-sm text-slate-200 mb-1">Yak Kharka ➔ High Camp</h4>
+        <p class="text-[11px] text-slate-400 font-light mb-3">4,018מ' ➔ 4,450מ' • הגעה למחנה הבסיס</p>
+        <span class="inline-block text-[10px] font-bold text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md">🔒 בקרוב</span>
+      </div>
+
+      <!-- Day 9 Upcoming Peak -->
+      <div class="bg-slate-900/60 p-4 rounded-2xl border border-amber-500/20 opacity-80">
+        <div class="flex items-center justify-between text-xs text-amber-400 font-bold mb-2">
+          <span>יום 9 לטרק</span>
+          <span>18/09</span>
+        </div>
+        <h4 class="font-bold text-sm text-white mb-1">Thorong La Pass (5,416m) 🏔️</h4>
+        <p class="text-[11px] text-slate-400 font-light mb-3">חציית מעבר ההרים הגבוה בעולם וירידה ל-Muktinath</p>
+        <span class="inline-block text-[10px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">🏆 שיא הטרק</span>
+      </div>
+
+    </div>
+
   </main>
 
-  <!-- Detail View Container (Internal Day Page) -->
-  <section class="detail-view container hidden" id="detail-view" tabindex="-1">
-    <div class="detail-card">
-      <div class="detail-header-bar">
-        <button class="btn-back-top" onclick="showListView()">⬅️ חזרה לכל הימים</button>
-        <span class="detail-day-tag" id="detail-day-tag">יום 4</span>
-      </div>
-
-      <div class="detail-main-image-wrap">
-        <img id="detail-image" src="" alt="תמונת היום המוגדלת">
-        <div class="detail-overlay-info">
-          <span class="detail-alt-badge" id="detail-alt-badge">גובה: 2,710 מ'</span>
-        </div>
-      </div>
-
-      <div class="detail-content-body">
-        <div class="detail-meta-row">
-          <span id="detail-date" class="meta-item">🗓️ תאריך: 12/09</span>
-          <span id="detail-loc" class="meta-item">📍 מקום לינה: Chame</span>
-        </div>
-
-        <h2 id="detail-title">לינה ב-Chame</h2>
-        <p id="detail-desc" class="detail-text-content"></p>
-
-        <div class="detail-highlights" id="detail-highlights-box">
-          <h4>💡 דגשים ומידע ליום זה:</h4>
-          <ul id="detail-highlights-list"></ul>
-        </div>
-      </div>
-
-      <!-- Bottom Navigation for Day Page -->
-      <nav class="bottom-nav">
-        <button id="btn-prev-day" class="nav-btn prev-btn" onclick="prevDay()">⬅️ היום הקודם</button>
-        <button class="nav-btn home-btn" onclick="showListView()">🏠 חזרה לכל הימים</button>
-        <button id="btn-next-day" class="nav-btn next-btn" onclick="nextDay()">היום הבא ➡️</button>
-      </nav>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>נבנה עבור עמית • מסלול סובב אנאפורנה 🏔️ | ימים 2-11</p>
+  <!-- FOOTER -->
+  <footer class="mt-20 border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="mb-2">עמית בסובב אנאפורנה 🇳🇵 — יומן מסע משפחתי מעודכן</p>
+      <p class="text-[11px] text-slate-600">כל הזכויות שמורות למשפחת לנדסברג • מופעל על ידי GitHub Pages & Netlify</p>
     </div>
   </footer>
 
-  <script src="assets/js/site.js"></script>
+  <script>
+    function shareHub() {
+      const text = `🏔️ שער הכניסה הראשי: יומן המסע של עמית בסובב אנאפורנה 🇳🇵!\n${window.location.href}`;
+      if (navigator.share) {
+        navigator.share({
+          title: 'עמית בסובב אנאפורנה - שער הכניסה הראשי',
+          text: text,
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(text);
+        alert('הקישור לשער הראשי הועתק ללוח!');
+      }
+    }
+  </script>
 </body>
 </html>
